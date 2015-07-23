@@ -1,0 +1,19 @@
+{
+  "name": "m2ts-stream",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/m2ts-stream.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/yaegaki/node-m2ts-stream",
+  "keywords": [
+    "m2ts",
+    "ts"
+  ],
+  "author": "yaegaki",
+  "license": "MIT",
+  "dependencies": {
+    "stream-buffers": "^2.2.0"
+  }
+}
