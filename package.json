@@ -1,6 +1,6 @@
 {
   "name": "m2ts-stream",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "",
   "main": "./lib/m2ts-stream.js",
   "scripts": {
@@ -12,6 +12,10 @@
     "ts"
   ],
   "author": "yaegaki",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaegaki/node-m2ts-stream.git"
+  },
   "license": "MIT",
   "dependencies": {
     "stream-buffers": "^2.2.0"
