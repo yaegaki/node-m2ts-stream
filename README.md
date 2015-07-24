@@ -16,10 +16,11 @@ npm install m2ts-stream
 ```javascript
 var M2TsStream = require('m2ts-stream');
 var m2TsStream = new M2TsStream();
-var inputStream = require('fs').createReadStream('hoge.ts');
+var fs = require('fs');
+var inputStream = fs.createReadStream('hoge.ts');
 
-inputStream.pipe(m2TsStrem).on('data', function (tsPacket) {
-    console.log(tsPacket);
+inputStream.pipe(m2TsStrem).on('data', function (rawTsPacket) {
+    console.log(rawTsPacket);
 });
 
 // PIDが0のものだけを取得する
@@ -27,4 +28,13 @@ m2TsStream.include(0x0).on(/**/);
 
 // PIDが0のものを除外する
 m2TsStream.exclude(0x0).on(/**/);
+
+// スクランブルされたパケットを廃棄してファイルに書き込む
+m2TsStream
+    .parse()
+    .where(function (tsPacket) {
+        return !tsPacket.isScrambled;
+    })
+    .unparse()
+    .pipe(fs.createWriteStream('hoge2.ts'));
 ```
