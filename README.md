@@ -13,6 +13,8 @@ npm install m2ts-stream
 使い方
 ----------
 
+詳しくはexample参照
+
 ```javascript
 var M2TsStream = require('m2ts-stream');
 var m2TsStream = new M2TsStream();
